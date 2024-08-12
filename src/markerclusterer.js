@@ -695,7 +695,7 @@ MarkerClusterer.prototype.repaint = function() {
 
   // Remove the old clusters.
   // Do it in a timeout so the other clusters have been drawn first.
-  if(window) {
+  if(typeof window !== "undefined") {
     window.setTimeout(function() {
       for (var i = 0, cluster; cluster = oldClusters[i]; i++) {
         cluster.remove();
@@ -1270,7 +1270,7 @@ ClusterIcon.prototype.createCss = function(pos) {
 // Export Symbols for Closure
 // If you are not going to compile with closure then you can remove the
 // code below.
-if(window) {
+if(typeof window !== "undefined") {
   window['MarkerClusterer'] = MarkerClusterer;
   MarkerClusterer.prototype['addMarker'] = MarkerClusterer.prototype.addMarker;
   MarkerClusterer.prototype['addMarkers'] = MarkerClusterer.prototype.addMarkers;
